@@ -1,0 +1,55 @@
+[project]
+name = "ran-ares-integration"
+authors = [
+    { name = "Dhaval Salwala", email = "dhaval.vinodbhai.salwala@ibm.com" },
+    { name = "Inge Vejsbjerg", email = "ingevejs@ie.ibm.com" },
+    { name = "Elizabeth Daly", email = "elizabeth.daly@ie.ibm.com" },
+]
+keywords = [
+    "ai risks",
+    "ai safety",
+    "ai governance"
+]
+license = "Apache-2.0"
+description = "ARES Integration for Risk Atlas Nexus allows you to run AI robustness evaluations on AI Systems derived from use cases."
+dynamic = [
+    "version",
+    "readme",
+]
+requires-python = ">=3.11, <3.12.5"
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows",
+]
+dependencies = [
+    "linkml",
+    "linkml_runtime",
+    "pydantic",
+    "isort",
+    "pre-commit",
+    "ares-redteamer@git+ssh://git@github.com/IBM/ares.git@4c0a2f12fed8a5224ff5865387a5a97c313f0cd3",
+    "ares-human-jailbreak@git+ssh://git@github.com/IBM/ares.git#subdirectory=plugins/ares-human-jailbreak"
+]
+
+[tool.setuptools.dynamic]
+version = { attr = "ran_ares_integration.__version__" }
+readme = { file = [
+    "README.md",
+], content-type = "text/markdown" }
+
+[tool.setuptools.package-data]
+mypkg = ["*.json", "*.yaml", ".svg"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+remove_redundant_aliases = true
+group_by_package = true
+combine_star = true
+lines_after_imports = 2

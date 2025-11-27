@@ -1,0 +1,44 @@
+[project]
+name = "{{cookiecutter.extension_repo_name}}"
+authors = [
+    { name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.author_email}}" },
+]
+keywords = []
+description = "{{cookiecutter.extension_description}}"
+dynamic = [
+    "version",
+    "readme",
+]
+requires-python = ">=3.11, <3.12.5"
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows",
+]
+license = "Apache-2.0"
+dependencies = []
+
+[tool.setuptools.dynamic]
+version = { attr = "{{cookiecutter.extension_slug}}.__version__" }
+readme = { file = [
+    "README.md",
+], content-type = "text/markdown" }
+
+[tool.setuptools.package-data]
+mypkg = ["*.json", "*.yaml", ".svg"]
+
+[project.urls]
+homepage = "https://github.com/{{cookiecutter.__gh_slug}}"
+
+[tool.isort]
+profile = "black"
+line_length = 88
+remove_redundant_aliases = true
+group_by_package = true
+combine_star = true
+lines_after_imports = 2

@@ -1,0 +1,10 @@
+{
+    "author_name": "",
+    "author_email": "",
+    "extension_name": "",
+    "extension_repo_name": "ran-{{ cookiecutter.extension_name.lower().replace(' ', '-') }}",
+    "extension_slug": "ran_{{ cookiecutter.extension_name.lower().replace(' ', '_') }}",
+    "extension_description": "",
+    "version": "0.1.0",
+    "__gh_slug": "IBM/risk-atlas-nexus-extensions/tree/main/{{ cookiecutter.extension_repo_name }}"
+}
