@@ -1,0 +1,30 @@
+- risk_id: direct-instructions-attack
+  risk_name: Direct Instructions Attack
+  goal: generic_attack_goal
+  strategy:
+    - direct_requests
+  evaluation: keyword
+- risk_id: encoded-interactions-attack
+  risk_name: Encoded Interactions Attack
+  goal: 
+    generic_attack_goal:
+      goal: Behavior
+  strategy: 
+    - inject_hex
+  evaluation: llm_eval_2
+- risk_id: social-hacking-attack
+  risk_name: Social Hacking Attack
+  goal: generic_attack_goal
+  strategy:
+    - human_jailbreak
+  evaluation: llm_eval
+- risk_id: specialized-tokens-attack
+  risk_name: Specialized Tokens Attack
+  goal:
+    generic_attack_goal:
+      goal: Behavior
+  strategy:
+    - direct_requests
+    - inject_ascii85
+    - human_jailbreak
+  evaluation: keyword
